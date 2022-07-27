@@ -1,4 +1,6 @@
 
+## [Pyladies X Aif](/PyLadies_X_AIF.ipynb)
+
 ## Arithmetic Analysis
   * [Bisection](arithmetic_analysis/bisection.py)
   * [Gaussian Elimination](arithmetic_analysis/gaussian_elimination.py)
