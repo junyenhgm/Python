@@ -8,9 +8,9 @@ text. The type of transposition cipher demonstrated under is the ROUTE cipher.
 """
 
 
-def main():
+def main() -> None:
     message = input("Enter message: ")
-    key = int(input("Enter key [2-%s]: " % (len(message) - 1)))
+    key = int(input(f"Enter key [2-{len(message) - 1}]: "))
     mode = input("Encryption/Decryption [e/d]: ")
 
     if mode.lower().startswith("e"):
@@ -19,10 +19,10 @@ def main():
         text = decryptMessage(key, message)
 
     # Append pipe symbol (vertical bar) to identify spaces at the end.
-    print("Output:\n%s" % (text + "|"))
+    print(f"Output:\n{text + '|'}")
 
 
-def encryptMessage(key, message):
+def encryptMessage(key: int, message: str) -> str:
     """
     >>> encryptMessage(6, 'Harshil Darji')
     'Hlia rDsahrij'
@@ -36,7 +36,7 @@ def encryptMessage(key, message):
     return "".join(cipherText)
 
 
-def decryptMessage(key, message):
+def decryptMessage(key: int, message: str) -> str:
     """
     >>> decryptMessage(6, 'Hlia rDsahrij')
     'Harshil Darji'

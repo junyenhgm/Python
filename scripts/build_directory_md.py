@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 
 import os
-from typing import Iterator
-
-URL_BASE = "https://github.com/TheAlgorithms/Python/blob/master"
+from collections.abc import Iterator
 
 
 def good_file_paths(top_dir: str = ".") -> Iterator[str]:
@@ -31,12 +29,12 @@ def print_path(old_path: str, new_path: str) -> str:
 
 def print_directory_md(top_dir: str = ".") -> None:
     old_path = ""
-    for filepath in sorted(good_file_paths()):
+    for filepath in sorted(good_file_paths(top_dir)):
         filepath, filename = os.path.split(filepath)
         if filepath != old_path:
             old_path = print_path(old_path, filepath)
         indent = (filepath.count(os.sep) + 1) if filepath else 0
-        url = "/".join((URL_BASE, filepath, filename)).replace(" ", "%20")
+        url = "/".join((filepath, filename)).replace(" ", "%20")
         filename = os.path.splitext(filename.replace("_", " ").title())[0]
         print(f"{md_prefix(indent)} [{filename}]({url})")
 

@@ -9,8 +9,8 @@ Note that only the integer weights 0-1 knapsack problem is solvable
 
 def MF_knapsack(i, wt, val, j):
     """
-    This code involves the concept of memory functions. Here we solve the subproblems which are needed
-    unlike the below example
+    This code involves the concept of memory functions. Here we solve the subproblems
+    which are needed unlike the below example
     F is a 2D array with -1s filled up
     """
     global F  # a global dp table for knapsack
@@ -91,7 +91,7 @@ def knapsack_with_example_solution(W: int, wt: list, val: list):
             )
 
     optimal_val, dp_table = knapsack(W, wt, val, num_items)
-    example_optional_set = set()
+    example_optional_set: set = set()
     _construct_solution(dp_table, wt, num_items, W, example_optional_set)
 
     return optimal_val, example_optional_set

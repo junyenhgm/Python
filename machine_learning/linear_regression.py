@@ -7,12 +7,12 @@ We try to set the weight of these features, over many iterations, so that they b
 fit our dataset. In this particular code, I had used a CSGO dataset (ADR vs
 Rating). We try to best fit a line through dataset and estimate the parameters.
 """
-import requests
 import numpy as np
+import requests
 
 
 def collect_dataset():
-    """ Collect dataset of CSGO
+    """Collect dataset of CSGO
     The dataset contains ADR vs Rating of a Player
     :return : dataset obtained from the link, as matrix
     """
@@ -32,7 +32,7 @@ def collect_dataset():
 
 
 def run_steep_gradient_descent(data_x, data_y, len_data, alpha, theta):
-    """ Run steep gradient descent and updates the Feature vector accordingly_
+    """Run steep gradient descent and updates the Feature vector accordingly_
     :param data_x   : contains the dataset
     :param data_y   : contains the output associated with each data-entry
     :param len_data : length of the data_
@@ -51,7 +51,7 @@ def run_steep_gradient_descent(data_x, data_y, len_data, alpha, theta):
 
 
 def sum_of_square_error(data_x, data_y, len_data, theta):
-    """ Return sum of square error for error calculation
+    """Return sum of square error for error calculation
     :param data_x    : contains our dataset
     :param data_y    : contains the output (result vector)
     :param len_data  : len of the dataset
@@ -66,7 +66,7 @@ def sum_of_square_error(data_x, data_y, len_data, theta):
 
 
 def run_linear_regression(data_x, data_y):
-    """ Implement Linear regression over the dataset
+    """Implement Linear regression over the dataset
     :param data_x  : contains our dataset
     :param data_y  : contains the output (result vector)
     :return        : feature for line of best fit (Feature vector)
@@ -88,7 +88,7 @@ def run_linear_regression(data_x, data_y):
 
 
 def main():
-    """ Driver function """
+    """Driver function"""
     data = collect_dataset()
 
     len_data = data.shape[0]
@@ -99,7 +99,7 @@ def main():
     len_result = theta.shape[1]
     print("Resultant Feature vector : ")
     for i in range(0, len_result):
-        print("%.5f" % (theta[0, i]))
+        print(f"{theta[0, i]:.5f}")
 
 
 if __name__ == "__main__":
